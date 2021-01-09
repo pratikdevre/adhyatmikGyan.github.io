@@ -1,30 +1,12 @@
-function brahma_chng1() {
-    document.getElementById("bd").src = "imgs/brahma1.jpg";
-}
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/test", {
+    useNewUrlParser: true,
+    useUnifiedTopology:true,
+    useCreateIndex:true
+});
 
-function brahma_chng2() {
-    document.getElementById("bd").src = "imgs/brahmadev2.jpg";
-}
-
-function vishnu_chng1() {
-    document.getElementById("nr").src = "imgs/narayan2.jpg";
-}
-
-function vishnu_chng2() {
-    document.getElementById("nr").src = "imgs/vishnu.jpg";
-}
-
-function mahadev_chng1() {
-    document.getElementById("md").src = "imgs/mahadev2.png";
-}
-
-function mahadev_chng2() {
-    document.getElementById("md").src = "imgs/mahadev.png";
-}
-
-function list()
-{
-    let list = document.getElementById("home");
-    list= document.createElement('li');
-    list = list.innerText="go back";
-}
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('Booyah, We are connected');
+});
