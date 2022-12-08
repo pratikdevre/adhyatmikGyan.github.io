@@ -4,7 +4,7 @@
   "description": "this is a very good website",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "mongoose": "^5.11.10",
     "mysql": "^2.18.1",
     "pug": "^3.0.0"
